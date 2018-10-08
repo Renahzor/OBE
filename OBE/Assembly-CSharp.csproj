@@ -61,7 +61,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AdventurerScript.cs" />
+    <Compile Include="Assets\Scripts\Extensions\ListExtensions.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\NameGenerator.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\Profession.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\Stats.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\VillagerScript.cs" />
+    <None Include="Assets\Resources\TextData\FemaleNames.txt" />
+    <None Include="Assets\Resources\TextData\LastNames.txt" />
+    <None Include="Assets\Resources\TextData\MaleNames.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Desktop/OBERepo/OBE/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
