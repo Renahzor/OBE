@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Extensions\ListExtensions.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\HealthScript.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NameGenerator.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Profession.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Stats.cs" />

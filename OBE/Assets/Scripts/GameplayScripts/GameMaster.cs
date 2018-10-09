@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Class to control the overall gamestate and contain globals necessary for gameplay
 public class GameMaster : MonoBehaviour {
 
     [SerializeField]
@@ -19,9 +20,10 @@ public class GameMaster : MonoBehaviour {
         //spawns initial villagers with randomized gender and names.
         for (int i = 0; i < startingVillagers; i++)
         {
-            bool gender = (Random.value > 0.5f); //gives us a random gender for name
+            bool gender = (Random.value > 0.5f); //gives us a random gender for name selection
             var newVillager = Instantiate(villagerPrefab) as GameObject;
             newVillager.GetComponent<VillagerScript>().SetName(Names.GetName(gender));
+            newVillager.GetComponent<Transform>().position = new Vector3(Random.Range(-30.0f, 30.0f), 1.07f, Random.Range(-30.0f, 30.0f));
         }
 	}
 	

@@ -11,9 +11,13 @@ public class VillagerScript : MonoBehaviour {
     [SerializeField]
     private string villagerName;
 
+    private HealthScript health;
+
 	// Use this for initialization
 	void Start () {
         stats = new Stats();
+        health = new HealthScript(stats.Toughness, 1);
+        profession = new Profession(1);
 	}
 	
 	// Update is called once per frame
