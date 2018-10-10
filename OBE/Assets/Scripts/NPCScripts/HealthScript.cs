@@ -12,4 +12,17 @@ public class HealthScript
         maxHP = 10 + (toughness / 4);
     }
 
+    public void Hurt(int damage)
+    {
+        currentHP -= damage;
+        if (currentHP <= 0)
+            return; //kill
+    }
+
+    public void Heal(int healthGained)
+    {
+        currentHP += healthGained;
+        if (currentHP > maxHP)
+            currentHP = maxHP;
+    }
 }

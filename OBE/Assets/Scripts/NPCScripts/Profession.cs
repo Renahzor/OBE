@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Profession {
 
-    enum StartingProfessions { Villager }
+    enum Professions { Villager, Smith, Armorer, Apothecary, Innkeeper, Brewer, Barkeep, Scholar }
 
-    StartingProfessions startingProfession = StartingProfessions.Villager;
+    Professions profession = Professions.Villager;  
 
     public int level { get; private set; }
     public int experiencePoints { get; private set; }
