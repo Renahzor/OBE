@@ -68,7 +68,9 @@
     <Compile Include="Assets\Scripts\NPCScripts\Movement.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NameGenerator.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NPCBehavior.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\NPCClickHandler.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Profession.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\ProfessionTask.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Stats.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\VillagerScript.cs" />
     <None Include="Assets\Resources\TextData\FemaleNames.txt" />

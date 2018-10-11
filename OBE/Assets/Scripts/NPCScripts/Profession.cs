@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Profession {
 
-    enum Professions { Villager, Smith, Armorer, Apothecary, Innkeeper, Brewer, Barkeep, Scholar }
+    public enum Professions { Villager, Smith, Armorer, Apothecary, Innkeeper, Brewer, Barkeep, Scholar }
 
     Professions profession = Professions.Villager;  
 
@@ -28,6 +28,11 @@ public class Profession {
             experienceToLevel = (int) (4 * Mathf.Pow(level, 3)) / 5;
         }
         return;
+    }
+
+    public void SwitchProfession(Professions newProfession)
+    {
+        profession = newProfession;
     }
 
 }

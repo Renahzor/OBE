@@ -10,6 +10,9 @@ public class GameMaster : MonoBehaviour {
     NameGenerator Names;
 
     [SerializeField]
+    Camera mainCamera;
+
+    [SerializeField]
     //starting number of villagers to spawn
     private int startingVillagers = 1; 
 
@@ -28,7 +31,21 @@ public class GameMaster : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+		//Get raycast for mouseclicks
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.transform.GetComponent<NPCClickHandler>() != null)
+                {
+                    hit.transform.GetComponent<NPCClickHandler>().Clicked();
+                }
+            }
+        }
 	}
 }

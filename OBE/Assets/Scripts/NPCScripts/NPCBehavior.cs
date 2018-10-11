@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class NPCBehavior : MonoBehaviour {
 
-    enum TaskTypes { Idle, MoveToLocation, Work, FindQuest }
+    public enum TaskTypes { Idle, MoveToLocation, Work, FindQuest }
 
     TaskTypes currentTask = TaskTypes.Idle;
 
