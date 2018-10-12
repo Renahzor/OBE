@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Extensions\ListExtensions.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\StructureScript.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\HealthScript.cs" />
