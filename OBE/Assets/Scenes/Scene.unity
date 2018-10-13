@@ -380,6 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveSpeed: 30
   zoomSpeed: 750
+  rotationSpeed: 100
   cameraFocusPoint: {fileID: 1299647402}
 --- !u!1 &684234834
 GameObject:

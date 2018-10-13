@@ -8,9 +8,12 @@ public class CameraController : MonoBehaviour {
     private float cameraMoveSpeed;
     [SerializeField]
     private float zoomSpeed;
+    [SerializeField]
+    private float rotationSpeed;
 
     private float zoomMax;
     private float zoomMin;
+
 
     [SerializeField]
     GameObject cameraFocusPoint;
@@ -53,6 +56,16 @@ public class CameraController : MonoBehaviour {
             transform.Translate(Vector3.right * Time.deltaTime * cameraMoveSpeed, Space.World);
         }
 
+        if (Input.GetKey(KeyCode.E))
+        {
+            transform.RotateAround(cameraFocusPoint.transform.position, Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.RotateAround(cameraFocusPoint.transform.position, Vector3.up, -rotationSpeed * Time.deltaTime);
+        }
+
         float mouseWheel = Input.GetAxis("Mouse ScrollWheel");
 
         //Zoom Camera with scroll wheel, cheks extents and scroll direction, then zooms camera relative to focal point.
@@ -60,5 +73,7 @@ public class CameraController : MonoBehaviour {
              (Vector3.Distance(transform.position, cameraFocusPoint.transform.position) < zoomMax && mouseWheel < 0.0f) )
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, cameraFocusPoint.transform.position, mouseWheel * Time.deltaTime * zoomSpeed);
         
+
+
 	}
 }
