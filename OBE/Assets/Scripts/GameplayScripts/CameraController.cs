@@ -35,25 +35,36 @@ public class CameraController : MonoBehaviour {
             cameraFocusPoint.transform.position = hitInfo.point;
         }
 
-
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * cameraMoveSpeed, Space.World);
+            var panDirection = transform.forward;
+            panDirection.y = 0;
+            panDirection.Normalize();
+            transform.Translate(panDirection * Time.deltaTime * cameraMoveSpeed, Space.World);
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * -cameraMoveSpeed, Space.World);
+            var panDirection = transform.forward;
+            panDirection.y = 0;
+            panDirection.Normalize();
+            transform.Translate(panDirection * Time.deltaTime * -cameraMoveSpeed, Space.World);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * -cameraMoveSpeed, Space.World);
+            var panDirection = transform.right;
+            panDirection.y = 0;
+            panDirection.Normalize();
+            transform.Translate(panDirection * Time.deltaTime * -cameraMoveSpeed, Space.World);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * cameraMoveSpeed, Space.World);
+            var panDirection = transform.right;
+            panDirection.y = 0;
+            panDirection.Normalize();
+            transform.Translate(panDirection * Time.deltaTime * cameraMoveSpeed, Space.World);
         }
 
         if (Input.GetKey(KeyCode.E))
@@ -72,8 +83,5 @@ public class CameraController : MonoBehaviour {
         if ( (Vector3.Distance(transform.position, cameraFocusPoint.transform.position) > zoomMin && mouseWheel > 0.0f) ||
              (Vector3.Distance(transform.position, cameraFocusPoint.transform.position) < zoomMax && mouseWheel < 0.0f) )
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, cameraFocusPoint.transform.position, mouseWheel * Time.deltaTime * zoomSpeed);
-        
-
-
 	}
 }
