@@ -13,6 +13,9 @@ public class GameMaster : MonoBehaviour {
     Camera mainCamera;
 
     [SerializeField]
+    private UIController uiController;
+
+    [SerializeField]
     //starting number of villagers to spawn
     private int startingVillagers = 1; 
 
@@ -48,4 +51,12 @@ public class GameMaster : MonoBehaviour {
             }
         }
 	}
+
+    public void SceneObjectClicked(GameObject itemClicked)
+    {
+        if (itemClicked.GetComponent<VillagerScript>())
+        {
+            uiController.GetComponent<UIController>().ClickedNPC(itemClicked);
+        }
+    }
 }

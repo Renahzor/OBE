@@ -7,6 +7,7 @@ public class NPCClickHandler : MonoBehaviour {
     public void Clicked()
     {
         Debug.Log("Clicked " + gameObject.GetComponent<VillagerScript>().villagerName);
-        //open NPC menu on UI.
+
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().SceneObjectClicked(gameObject);
     }
 }

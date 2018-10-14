@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\NPCScripts\ProfessionTask.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Stats.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\VillagerScript.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\UIController.cs" />
     <None Include="Assets\Resources\TextData\FemaleNames.txt" />
     <None Include="Assets\Resources\TextData\LastNames.txt" />
     <None Include="Assets\Resources\TextData\MaleNames.txt" />
