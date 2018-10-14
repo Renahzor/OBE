@@ -64,12 +64,12 @@
     <Compile Include="Assets\Scripts\Extensions\ListExtensions.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\SceneObjectClickHandler.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\StructureScript.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\HealthScript.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Movement.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NameGenerator.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NPCBehavior.cs" />
-    <Compile Include="Assets\Scripts\NPCScripts\NPCClickHandler.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Profession.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\ProfessionTask.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Stats.cs" />

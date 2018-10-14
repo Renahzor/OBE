@@ -5,11 +5,10 @@ using UnityEngine;
 public class VillagerScript : MonoBehaviour {
 
     private Profession profession;
-    [SerializeField]
-    private Stats stats;
+    public Stats stats { get; private set; }
 
     public string villagerName { get; private set; }
-    private HealthScript health;
+    public HealthScript health { get; private set; }
     private Movement movement;
 
 	// Use this for initialization
@@ -17,7 +16,7 @@ public class VillagerScript : MonoBehaviour {
     {
         movement = gameObject.GetComponent<Movement>();
         stats = new Stats();
-        health = new HealthScript(stats.Toughness, 1);
+        health = new HealthScript(stats.StatsList["Toughness"], 1);
         profession = new Profession(1);
 	}
 	

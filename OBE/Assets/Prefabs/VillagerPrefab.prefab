@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114985500125021328}
   - component: {fileID: 114733594453191698}
   - component: {fileID: 114456636178614732}
-  - component: {fileID: 114367469602729460}
+  - component: {fileID: 114780071670365018}
   m_Layer: 0
   m_Name: VillagerPrefab
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867510010098580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.07, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,17 +88,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867510010098580}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114367469602729460
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1867510010098580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2ee70ce2bd26274ca3102edcda458f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114456636178614732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,6 +109,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f01869d37aea9fa47ab1cb0b5c3782bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114780071670365018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1867510010098580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee70ce2bd26274ca3102edcda458f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114985500125021328

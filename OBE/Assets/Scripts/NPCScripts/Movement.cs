@@ -28,5 +28,6 @@ public class Movement : MonoBehaviour {
     public void SetDestination(GameObject destination)
     {
         currentDestination = destination.transform.localPosition;
+        currentDestination.y = 1;
     }
 }

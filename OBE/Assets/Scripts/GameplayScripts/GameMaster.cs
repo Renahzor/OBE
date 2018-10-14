@@ -44,19 +44,20 @@ public class GameMaster : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform.GetComponent<NPCClickHandler>() != null)
+                if (hit.transform.GetComponent<SceneObjectClickHandler>() != null)
                 {
-                    hit.transform.GetComponent<NPCClickHandler>().Clicked();
+                    hit.transform.GetComponent<SceneObjectClickHandler>().Clicked();
                 }
             }
         }
 	}
 
+    //Using GameMaster as the main handler to pass scene clicked items to the UI
     public void SceneObjectClicked(GameObject itemClicked)
     {
         if (itemClicked.GetComponent<VillagerScript>())
         {
-            uiController.GetComponent<UIController>().ClickedNPC(itemClicked);
+            uiController.GetComponent<UIController>().ObjectClicked(itemClicked);
         }
     }
 }

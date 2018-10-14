@@ -10,6 +10,7 @@ public class HealthScript
     public HealthScript(int toughness, int heroLevel)
     {
         maxHP = 10 + (toughness / 4);
+        currentHP = maxHP;
     }
 
     public void Hurt(int damage)
