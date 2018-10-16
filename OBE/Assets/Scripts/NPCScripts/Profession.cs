@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Profession {
+public enum Professions { Villager, Blacksmith, Armorer, Alchemist, Innkeeper, Brewer, Barkeep, Scholar }
 
-    public enum Professions { Villager, Smith, Armorer, Apothecary, Innkeeper, Brewer, Barkeep, Scholar }
+public class ProfessionScript {
 
-    Professions profession = Professions.Villager;  
+    public Professions profession { get; private set; }
 
     public int level { get; private set; }
     public int experiencePoints { get; private set; }
     public int experienceToLevel { get; private set; }
 
-    public Profession(int startingLevel)
+    public ProfessionScript(int startingLevel)
     {
+        profession = Professions.Villager;
         level = startingLevel;
         experiencePoints = 0;
         experienceToLevel = 15;

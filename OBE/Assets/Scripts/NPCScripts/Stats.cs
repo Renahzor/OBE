@@ -9,11 +9,11 @@ public class Stats {
     public Stats()
     {
         StatsList = new Dictionary<string, int>();
-        StatsList.Add("Brawn", Random.Range(3, 19));
-        StatsList.Add("Speed", Random.Range(3, 19));
-        StatsList.Add("Brains", Random.Range(3, 19));
-        StatsList.Add("Guile", Random.Range(3, 19));
-        StatsList.Add("Toughness", Random.Range(3, 19));
+        StatsList.Add("Brawn", (Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)) );
+        StatsList.Add("Speed", (Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)) );
+        StatsList.Add("Brains", (Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)) );
+        StatsList.Add("Guile", (Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)) );
+        StatsList.Add("Toughness", (Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)) );
     }
 
 

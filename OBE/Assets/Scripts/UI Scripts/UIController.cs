@@ -10,12 +10,17 @@ public class UIController : MonoBehaviour {
     [SerializeField]
     private GameObject villagerPanel;
     [SerializeField]
+    private GameObject buildPanel;
+    [SerializeField]
     private GameObject statsTextElement;
+    [SerializeField]
+    private GameObject buildButtonPrefab;
 
 	// Use this for initialization
 	void Start ()
     {
         villagerPanel.SetActive(false);
+        SetupBuildPanel();
 	}
 	
     //Takes a scene object that was clicked and populates the appropriate UI elements with the info needed.
@@ -35,6 +40,8 @@ public class UIController : MonoBehaviour {
                     t.text = v.villagerName;
                 else if (t.name == "HP")
                     t.text = "HP: " + v.health.currentHP + " / " + v.health.maxHP;
+                else if (t.name == "ProfessionText")
+                    t.text = "Level " + v.prof.level + " " + v.prof.profession + "   " + v.prof.experiencePoints + " / " + v.prof.experienceToLevel + " exp";
             }
 
             //get the stats panel
@@ -58,5 +65,11 @@ public class UIController : MonoBehaviour {
     public void ClosePanel(GameObject panelToClose)
     {
         panelToClose.SetActive(false);
+    }
+
+    //Method for populating the build windows
+    private void SetupBuildPanel()
+    {
+
     }
 }

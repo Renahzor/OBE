@@ -7,10 +7,13 @@ public class HealthScript
     public int currentHP { get; private set; }
 
     //constructor for starting HP
-    public HealthScript(int toughness, int heroLevel)
+    public HealthScript(int toughness, int heroLevel, Professions profession)
     {
-        maxHP = 10 + (toughness / 4);
-        currentHP = maxHP;
+        if (profession == Professions.Villager)
+        {
+            maxHP = 5 + ( (toughness / 2) - 5);
+            currentHP = maxHP;
+        }
     }
 
     public void Hurt(int damage)

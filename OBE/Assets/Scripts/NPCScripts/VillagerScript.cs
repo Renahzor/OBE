@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class VillagerScript : MonoBehaviour {
 
-    private Profession profession;
+    public ProfessionScript prof { get; private set; }
     public Stats stats { get; private set; }
 
     public string villagerName { get; private set; }
     public HealthScript health { get; private set; }
     private Movement movement;
 
+    public NPCRace race;
+
 	// Use this for initialization
 	void Start ()
     {
+        prof = new ProfessionScript(1);
         movement = gameObject.GetComponent<Movement>();
         stats = new Stats();
-        health = new HealthScript(stats.StatsList["Toughness"], 1);
-        profession = new Profession(1);
+        health = new HealthScript(stats.StatsList["Toughness"], 1, prof.profession);
 	}
 	
 	// Update is called once per frame
