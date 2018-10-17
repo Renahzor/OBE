@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -70,6 +71,11 @@ public class UIController : MonoBehaviour {
     //Method for populating the build windows
     private void SetupBuildPanel()
     {
-
+        foreach (var buildingType in Enum.GetValues(typeof(WorkshopType)))
+        {
+            var newButton = Instantiate(buildButtonPrefab);
+            newButton.transform.SetParent(buildPanel.transform, false);
+            newButton.GetComponentInChildren<Text>().text = buildingType.ToString();
+        }
     }
 }

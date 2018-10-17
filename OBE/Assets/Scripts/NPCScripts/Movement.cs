@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour {
 
         if (currentDestination != null)
         {
+            currentDestination = new Vector3(currentDestination.x, transform.position.y, currentDestination.z);
             transform.position = Vector3.MoveTowards(transform.position, currentDestination, (speed * Time.deltaTime));
         }
         
@@ -28,6 +29,5 @@ public class Movement : MonoBehaviour {
     public void SetDestination(GameObject destination)
     {
         currentDestination = destination.transform.localPosition;
-        currentDestination.y = 1;
     }
 }

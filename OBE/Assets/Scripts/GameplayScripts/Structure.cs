@@ -20,10 +20,9 @@ public class Structure : MonoBehaviour
 }
 
 //Workshops require a profession, and create items for sale, both at the workshop and for sale at stalls
+public enum WorkshopType { Blacksmith, Apothecary, Scribe, Tannery, Bowery, Brewery }
 public class Workshop : Structure
 {
-    public enum WorkshopType { Blacksmith, Apothecary, Scribe, Tannery, Bowery, Brewery }
-
     public WorkshopType workshopType { get; private set; }
 
     Professions professionRequired;
