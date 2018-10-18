@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Extensions\ListExtensions.cs" />
+    <Compile Include="Assets\Scripts\GameplayScripts\BuildStructure.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\SceneObjectClickHandler.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\NPCScripts\Movement.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NameGenerator.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NPCBehavior.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\NPCNeeds.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NPCRace.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Profession.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\ProfessionTask.cs" />

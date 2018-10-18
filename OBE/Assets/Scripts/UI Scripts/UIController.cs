@@ -76,6 +76,7 @@ public class UIController : MonoBehaviour {
             var newButton = Instantiate(buildButtonPrefab);
             newButton.transform.SetParent(buildPanel.transform, false);
             newButton.GetComponentInChildren<Text>().text = buildingType.ToString();
+            newButton.GetComponent<Button>().onClick.AddListener(() => GameObject.Find("GameMaster").GetComponent<BuildStructure>().StartBuild(0));
         }
     }
 }

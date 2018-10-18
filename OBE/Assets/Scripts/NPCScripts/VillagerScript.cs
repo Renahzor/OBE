@@ -13,6 +13,7 @@ public class VillagerScript : MonoBehaviour {
 
     public NPCRace race;
 
+    private NPCNeeds npcNeeds;
 	// Use this for initialization
 	void Start ()
     {
@@ -20,6 +21,8 @@ public class VillagerScript : MonoBehaviour {
         movement = gameObject.GetComponent<Movement>();
         stats = new Stats();
         health = new HealthScript(stats.StatsList["Toughness"], 1, prof.profession);
+
+        npcNeeds = new NPCNeeds(prof.profession, stats);
 	}
 	
 	// Update is called once per frame
