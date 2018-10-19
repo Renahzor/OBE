@@ -16,6 +16,10 @@ public class UIController : MonoBehaviour {
     private GameObject statsTextElement;
     [SerializeField]
     private GameObject buildButtonPrefab;
+    [SerializeField]
+    private Text currencyDisplay;
+    [SerializeField]
+    private GameObject structurePanel;
 
 	// Use this for initialization
 	void Start ()
@@ -61,6 +65,21 @@ public class UIController : MonoBehaviour {
                 element.GetComponent<Text>().text = stat.Key + " " + stat.Value;
             }
         }
+
+        if (objectClicked.GetComponent<Structure>())
+        {
+            Structure s = objectClicked.GetComponent<Structure>();
+            structurePanel.SetActive(true);
+
+            var structurePanelTextElements = structurePanel.GetComponentsInChildren<Text>();
+
+            foreach (Text t in structurePanelTextElements)
+            {
+                if (t.name == "Header")
+                    t.text = s.structureName;
+            }
+
+        }
     }
 
     public void ClosePanel(GameObject panelToClose)
@@ -71,12 +90,19 @@ public class UIController : MonoBehaviour {
     //Method for populating the build windows
     private void SetupBuildPanel()
     {
+        int i = 0;
         foreach (var buildingType in Enum.GetValues(typeof(WorkshopType)))
         {
             var newButton = Instantiate(buildButtonPrefab);
             newButton.transform.SetParent(buildPanel.transform, false);
             newButton.GetComponentInChildren<Text>().text = buildingType.ToString();
-            newButton.GetComponent<Button>().onClick.AddListener(() => GameObject.Find("GameMaster").GetComponent<BuildStructure>().StartBuild(0));
+            newButton.GetComponent<Button>().onClick.AddListener(delegate { GameObject.Find("GameMaster").GetComponent<BuildStructure>().StartBuild(0); } );
+            i++;
         }
+    }
+
+    public void UpdateCurrencyDisplay(int quantity)
+    {
+        currencyDisplay.text = "Gold: " + quantity;
     }
 }

@@ -6,6 +6,8 @@ public class BuildStructure : MonoBehaviour {
 
     [SerializeField]
     private List<GameObject> structurePrefabs;
+    [SerializeField]
+    private List<string> structureNames;
 
     GameObject newBuilding = null;
     bool placingObject = false;
@@ -37,6 +39,7 @@ public class BuildStructure : MonoBehaviour {
     public void StartBuild(int prefabIndex)
     {
         newBuilding = Instantiate(structurePrefabs[prefabIndex]);
+        newBuilding.GetComponent<Structure>().structureName = structureNames[prefabIndex];
         placingObject = true;
     }
 }

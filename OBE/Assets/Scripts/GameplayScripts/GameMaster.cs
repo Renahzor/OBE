@@ -5,6 +5,7 @@ using UnityEngine;
 //Class to control the overall gamestate and contain globals necessary for gameplay
 public class GameMaster : MonoBehaviour {
 
+    private int currency = 250;
     [SerializeField]
     private GameObject villagerPrefab;
     NameGenerator Names;
@@ -22,6 +23,7 @@ public class GameMaster : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Names = this.gameObject.GetComponent<NameGenerator>();
+        uiController.UpdateCurrencyDisplay(currency);
         
         //spawns initial villagers with randomized gender and names.
         for (int i = 0; i < startingVillagers; i++)
@@ -55,7 +57,7 @@ public class GameMaster : MonoBehaviour {
     //Using GameMaster as the main handler to pass scene clicked items to the UI
     public void SceneObjectClicked(GameObject itemClicked)
     {
-        if (itemClicked.GetComponent<VillagerScript>())
+        if (itemClicked.GetComponent<VillagerScript>() || itemClicked.GetComponent<Structure>())
         {
             uiController.GetComponent<UIController>().ObjectClicked(itemClicked);
         }

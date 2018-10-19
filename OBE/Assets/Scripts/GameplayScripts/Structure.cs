@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Structure : MonoBehaviour
 {
-    public string structureName { get; private set; }
+    public string structureName;
 
-    int upgradeLevel;
-    float actionTime;
-    float upgradeTimer;
+    [SerializeField]
+    private int upgradeLevel;
+    [SerializeField]
+    private float actionTime;
+    [SerializeField]
+    private float upgradeTimer;
 
+    [SerializeField]
     private GameObject modelPrefab;
+    //NavPoint should be near the entrance door for pathfinding.
+    [SerializeField]
     private GameObject navPoint;
 
-    public void Upgrade()
+    public virtual void Upgrade()
     {
         
     }
@@ -29,10 +35,9 @@ public class Workshop : Structure
 }
 
 //Inns and other gathering places for social interaction, sleep, and drink
+public enum InnType { Tavern, Public_House, Lodge, Inn }
 public class Inn : Structure
 {
-    public enum InnType { Tavern, Public_House, Lodge, Inn }
-
     public InnType innType { get; private set; }
 
     int PatronsAllowed;

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 65411499525847746}
   - component: {fileID: 114719753036238650}
   - component: {fileID: 114665600083729404}
+  - component: {fileID: 114998149588754758}
   m_Layer: 0
   m_Name: TestCube
   m_TagString: Untagged
@@ -118,5 +119,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90b0b04bece9e7043b8f5eba8828ef45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureName: 
+  upgradeLevel: 0
+  actionTime: 0
+  upgradeTimer: 0
+  modelPrefab: {fileID: 0}
+  navPoint: {fileID: 0}
+--- !u!114 &114998149588754758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679046260018424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ee70ce2bd26274ca3102edcda458f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
