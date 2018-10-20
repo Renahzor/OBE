@@ -21,4 +21,13 @@ public class NPCNeeds{
 
         decayRates.AddRange(new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f });
     }
+
+    public void DecayNeeds()
+    {
+        hunger -= decayRates[0];
+        thirst -= decayRates[1];
+        social -= decayRates[2];
+        materials -= decayRates[3];
+        work -= decayRates[4];
+    }
 }

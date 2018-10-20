@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,34 +6,44 @@ public enum Professions { Villager, Blacksmith, Armorer, Alchemist, Innkeeper, B
 
 public class ProfessionScript {
 
-    public Professions profession { get; private set; }
+    public Dictionary<Professions, int> professionExperience { get; private set; }
+    public Dictionary<Professions, int> professionLevels { get; private set; }
 
-    public int level { get; private set; }
-    public int experiencePoints { get; private set; }
-    public int experienceToLevel { get; private set; }
+    public Professions assignedProfession { get; private set; }
 
     public ProfessionScript(int startingLevel)
     {
-        profession = Professions.Villager;
-        level = startingLevel;
-        experiencePoints = 0;
-        experienceToLevel = 15;
+        professionExperience = new Dictionary<Professions, int>();
+        professionLevels = new Dictionary<Professions, int>();
+
+        foreach (var profType in Enum.GetValues(typeof(Professions)) )
+        {
+            professionExperience.Add((Professions)profType, 0);
+            professionLevels.Add((Professions)profType, 1);
+        }
+
+        assignedProfession = Professions.Villager;
     }
 
-    public void AddXP(int quantity)
+    public void AddXP(int quantity, Professions prof)
     {
-        experiencePoints += quantity;
-        if (experiencePoints >= experienceToLevel)
-        {
-            level++;
-            experienceToLevel = (int) (4 * Mathf.Pow(level, 3)) / 5;
-        }
+        professionExperience[prof] += quantity;
+
+        if (professionExperience[prof] >= (int)(4 * Mathf.Pow(professionLevels[prof], 3)) / 5)
+            professionLevels[prof]++;
+
         return;
+
     }
 
     public void SwitchProfession(Professions newProfession)
     {
-        profession = newProfession;
+        assignedProfession = newProfession;
+    }
+
+    public int GetProfessionLevel(Professions profession)
+    {
+        return professionExperience[profession];
     }
 
 }

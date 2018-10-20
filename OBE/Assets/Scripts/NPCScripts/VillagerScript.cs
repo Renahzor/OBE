@@ -20,9 +20,9 @@ public class VillagerScript : MonoBehaviour {
         prof = new ProfessionScript(1);
         movement = gameObject.GetComponent<Movement>();
         stats = new Stats();
-        health = new HealthScript(stats.StatsList["Toughness"], 1, prof.profession);
+        health = new HealthScript(stats.StatsList["Toughness"], 1, prof.assignedProfession);
 
-        npcNeeds = new NPCNeeds(prof.profession, stats);
+        npcNeeds = new NPCNeeds(prof.assignedProfession, stats);
 	}
 	
 	// Update is called once per frame

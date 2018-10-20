@@ -46,7 +46,7 @@ public class UIController : MonoBehaviour {
                 else if (t.name == "HP")
                     t.text = "HP: " + v.health.currentHP + " / " + v.health.maxHP;
                 else if (t.name == "ProfessionText")
-                    t.text = "Level " + v.prof.level + " " + v.prof.profession + "   " + v.prof.experiencePoints + " / " + v.prof.experienceToLevel + " exp";
+                    t.text = "Level " + v.prof.professionLevels[v.prof.assignedProfession] + " " + v.prof.assignedProfession;
             }
 
             //get the stats panel
