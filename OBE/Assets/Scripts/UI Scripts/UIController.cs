@@ -90,14 +90,12 @@ public class UIController : MonoBehaviour {
     //Method for populating the build windows
     private void SetupBuildPanel()
     {
-        int i = 0;
         foreach (var buildingType in Enum.GetValues(typeof(WorkshopType)))
         {
             var newButton = Instantiate(buildButtonPrefab);
             newButton.transform.SetParent(buildPanel.transform, false);
             newButton.GetComponentInChildren<Text>().text = buildingType.ToString();
-            newButton.GetComponent<Button>().onClick.AddListener(delegate { GameObject.Find("GameMaster").GetComponent<BuildStructure>().StartBuild(0); } );
-            i++;
+            newButton.GetComponent<Button>().onClick.AddListener( () => { GameObject.Find("GameMaster").GetComponent<BuildStructure>().StartBuild((int)buildingType); } );
         }
     }
 
