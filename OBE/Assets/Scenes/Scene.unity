@@ -448,10 +448,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1679046260018424, guid: 07841e5371115db4aa37d62d084636ba, type: 2}
+      propertyPath: m_Name
+      value: Blacksmith
+      objectReference: {fileID: 0}
     - target: {fileID: 114719753036238650, guid: 07841e5371115db4aa37d62d084636ba,
         type: 2}
       propertyPath: structureName
-      value: TEST
+      value: Blacksmith
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07841e5371115db4aa37d62d084636ba, type: 2}

@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        SetDestination(GameObject.Find("TestCube"));
+        SetDestination(GameObject.Find("NavPoint"));
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,6 @@ public class Movement : MonoBehaviour {
 
     public void SetDestination(GameObject destination)
     {
-        currentDestination = destination.transform.localPosition;
+        currentDestination = destination.transform.position;
     }
 }

@@ -1,33 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class NPCNeeds{
 
     float hunger;
     float thirst;
     float social;
-    float materials;
+    float fun;
     float work;
 
     List<float> decayRates = new List<float>();
 
     public NPCNeeds(Professions profession, Stats stats)
     {
-        hunger = 85.0f;
-        thirst = 85.0f;
-        social = 85.0f;
-        materials = 85.0f;
-        work = 85.0f;
+        hunger = Random.Range (50.0f, 95.0f);
+        thirst = Random.Range(50.0f, 95.0f);
+        social = Random.Range(50.0f, 95.0f);
+        fun = Random.Range(50.0f, 95.0f);
+        work = Random.Range(50.0f, 95.0f);
 
-        decayRates.AddRange(new float[] { 1.0f, 1.0f, 1.0f, 1.0f, 1.0f });
+        decayRates.AddRange(new float[] { 0.25f, 0.25f, 0.25f, 0.25f, 0.25f });
     }
 
     public void DecayNeeds()
     {
-        hunger -= decayRates[0];
-        thirst -= decayRates[1];
-        social -= decayRates[2];
-        materials -= decayRates[3];
-        work -= decayRates[4];
+        hunger -= (decayRates[0] * Time.deltaTime);
+        thirst -= (decayRates[1] * Time.deltaTime);
+        social -= (decayRates[2] * Time.deltaTime);
+        fun -= (decayRates[3] * Time.deltaTime);
+        work -= (decayRates[4] * Time.deltaTime);
     }
 }

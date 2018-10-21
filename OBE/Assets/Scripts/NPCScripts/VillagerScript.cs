@@ -17,9 +17,9 @@ public class VillagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        prof = new ProfessionScript(1);
         movement = gameObject.GetComponent<Movement>();
         stats = new Stats();
+        prof = new ProfessionScript(1, stats);
         health = new HealthScript(stats.StatsList["Toughness"], 1, prof.assignedProfession);
 
         npcNeeds = new NPCNeeds(prof.assignedProfession, stats);

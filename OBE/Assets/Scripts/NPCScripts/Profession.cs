@@ -6,12 +6,14 @@ public enum Professions { Villager, Blacksmith, Armorer, Alchemist, Innkeeper, B
 
 public class ProfessionScript {
 
+    bool isAdventurer = false;
+
     public Dictionary<Professions, int> professionExperience { get; private set; }
     public Dictionary<Professions, int> professionLevels { get; private set; }
 
     public Professions assignedProfession { get; private set; }
 
-    public ProfessionScript(int startingLevel)
+    public ProfessionScript(int startingLevel, Stats stats)
     {
         professionExperience = new Dictionary<Professions, int>();
         professionLevels = new Dictionary<Professions, int>();
