@@ -6,18 +6,12 @@ public class Structure : MonoBehaviour
 {
     public string structureName;
 
-    [SerializeField]
-    private int upgradeLevel;
-    [SerializeField]
-    private float actionTime;
-    [SerializeField]
-    private float upgradeTimer;
+    public int upgradeLevel { get; protected set; }
+    protected float actionTime;
+    protected float upgradeTimer;
 
-    [SerializeField]
-    private GameObject modelPrefab;
-    //NavPoint should be near the entrance door for pathfinding.
-    [SerializeField]
-    private GameObject navPoint;
+    protected GameObject buildingModel;
+    protected GameObject navPoint;
 
     public virtual void Upgrade()
     {
@@ -31,7 +25,36 @@ public class Workshop : Structure
 {
     public WorkshopType workshopType { get; private set; }
 
-    Professions professionRequired;
+    public List<VillagerScript> villagersWorkingHere { get; private set; }
+    public List<EquipmentItem> itemsCraftable { get; private set; }
+
+    public int numberOfWorkersAllowed { get; private set; }
+
+
+    public void SetupWorkshop(WorkshopType type, string buildingName, int level, GameObject model, GameObject navigationPoint)
+    {
+        workshopType = type;
+        structureName = buildingName;
+        upgradeLevel = level;
+        buildingModel = model;
+        navPoint = navigationPoint;
+        numberOfWorkersAllowed = 1;
+
+        villagersWorkingHere = new List<VillagerScript>();
+        itemsCraftable = new List<EquipmentItem>();
+
+        Debug.Log("Setup Completed");
+    }
+
+    public void AssignVillagerToWork(VillagerScript villager)
+    {
+        if (!villagersWorkingHere.Contains(villager) && numberOfWorkersAllowed > villagersWorkingHere.Count)
+        {
+            villagersWorkingHere.Add(villager);
+            Debug.Log("Villager Added to building" + villager.villagerName);
+            villager.SetDestination(this.transform.Find("NavPoint").gameObject);
+        }
+    }
 }
 
 //Inns and other gathering places for social interaction, sleep, and drink

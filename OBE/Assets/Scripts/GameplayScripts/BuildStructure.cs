@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,7 +40,13 @@ public class BuildStructure : MonoBehaviour {
     public void StartBuild(int prefabIndex)
     {
         newBuilding = Instantiate(structurePrefabs[prefabIndex]);
-        newBuilding.GetComponent<Structure>().structureName = structureNames[prefabIndex];
-        placingObject = true;
+        newBuilding.AddComponent<Workshop>();
+
+        if (newBuilding.GetComponent<Workshop>())
+        {
+            WorkshopType type = (WorkshopType) Enum.Parse(typeof(WorkshopType), structureNames[prefabIndex], true);
+            newBuilding.GetComponent<Workshop>().SetupWorkshop(type, structureNames[prefabIndex], 1, structurePrefabs[prefabIndex], null);
+            placingObject = true;
+        }
     }
 }

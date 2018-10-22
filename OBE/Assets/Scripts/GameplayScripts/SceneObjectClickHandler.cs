@@ -8,4 +8,10 @@ public class SceneObjectClickHandler : MonoBehaviour {
     {
         GameObject.Find("GameMaster").GetComponent<GameMaster>().SceneObjectClicked(gameObject);
     }
+
+    public void RightClicked()
+    {
+        GameObject.Find("GameMaster").GetComponent<GameMaster>().SceneObjectRightClicked(gameObject);
+        Debug.Log("RightClickRegistered");
+    }
 }

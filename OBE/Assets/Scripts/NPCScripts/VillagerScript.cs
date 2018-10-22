@@ -35,4 +35,9 @@ public class VillagerScript : MonoBehaviour {
     {
         villagerName = s;
     }
+
+    public void SetDestination(GameObject destination)
+    {
+        movement.SetDestination(destination);
+    }
 }

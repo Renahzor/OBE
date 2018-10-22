@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\GameplayScripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\SceneObjectClickHandler.cs" />
     <Compile Include="Assets\Scripts\GameplayScripts\Structure.cs" />
+    <Compile Include="Assets\Scripts\NPCScripts\EquipmentItem.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\HealthScript.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\Movement.cs" />
     <Compile Include="Assets\Scripts\NPCScripts\NameGenerator.cs" />
