@@ -123,6 +123,10 @@ public class UIController : MonoBehaviour {
             var element = Instantiate(structureTextElementPrefab);
             element.transform.SetParent(structureTextPanel, false);
             element.GetComponent<Text>().text = "Workers: " + s.villagersWorkingHere.Count + "/" + s.numberOfWorkersAllowed;
+
+            element = Instantiate(structureTextElementPrefab);
+            element.transform.SetParent(structureTextPanel, false);
+            element.GetComponent<Text>().text = "Level: " + s.upgradeLevel;
         }
     }
 

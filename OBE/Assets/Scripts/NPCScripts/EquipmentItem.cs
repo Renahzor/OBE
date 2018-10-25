@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public enum EquipmentType { Weapon, Armor, Consumable }
 
-public class EquipmentItem : MonoBehaviour {
+public class EquipmentItem{
 
     public EquipmentType equipmentType { get; private set; }
 
@@ -15,14 +14,4 @@ public class EquipmentItem : MonoBehaviour {
     int rarity;
 
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

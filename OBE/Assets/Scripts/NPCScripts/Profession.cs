@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Professions { Villager, Blacksmith, Armorer, Alchemist, Innkeeper, Brewer, Barkeep, Scholar }
+public enum Professions { Villager, Blacksmith, Armorer, Alchemist, Leatherworker, Innkeeper, Brewer, Barkeep, Scholar }
 
 public class ProfessionScript {
 
