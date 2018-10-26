@@ -28,6 +28,10 @@ public class UIController : MonoBehaviour {
     private GameObject structurePanel;
     [SerializeField]
     private GameObject structureTextElementPrefab;
+    [SerializeField]
+    private GameObject workerUIPrefab;
+    [SerializeField]
+    private GameObject workerPanel;
 
 	// Use this for initialization
 	void Start ()
@@ -118,6 +122,16 @@ public class UIController : MonoBehaviour {
             foreach (Transform child in structureTextPanel)
             {
                 Destroy(child.gameObject);
+            }
+
+            foreach (Transform child in workerPanel.transform)
+                Destroy(child.gameObject);
+
+            foreach (VillagerScript worker in s.villagersWorkingHere)
+            {
+                var workerInfo = Instantiate(workerUIPrefab);
+                workerInfo.transform.SetParent(workerPanel.transform, false);
+                workerInfo.transform.Find("WorkerText").GetComponent<Text>().text = worker.villagerName + "  " + s.requiredProfession.ToString() + "  " + worker.prof.professionLevels[s.requiredProfession] + "/10";
             }
 
             var element = Instantiate(structureTextElementPrefab);

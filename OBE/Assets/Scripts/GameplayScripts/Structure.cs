@@ -23,6 +23,8 @@ public class Structure : MonoBehaviour
 public enum WorkshopType { Blacksmith, Apothecary, Scribe, Tannery, Bowery, Brewery }
 public class Workshop : Structure
 {
+    public Professions requiredProfession;
+
     public WorkshopType workshopType { get; private set; }
 
     public List<VillagerScript> villagersWorkingHere { get; private set; }
@@ -31,7 +33,7 @@ public class Workshop : Structure
     public int numberOfWorkersAllowed { get; private set; }
 
 
-    public void SetupWorkshop(WorkshopType type, string buildingName, int level, GameObject model, GameObject navigationPoint)
+    public void SetupWorkshop(WorkshopType type, string buildingName, int level, GameObject model, GameObject navigationPoint, Professions reqProfession)
     {
         workshopType = type;
         structureName = buildingName;
@@ -39,6 +41,7 @@ public class Workshop : Structure
         buildingModel = model;
         navPoint = navigationPoint;
         numberOfWorkersAllowed = 1;
+        requiredProfession = reqProfession;
 
         villagersWorkingHere = new List<VillagerScript>();
         itemsCraftable = new List<EquipmentItem>();
